@@ -1,9 +1,6 @@
 #!/usr/local/bin/python3
 
 """
-Requirements:
-sudo -H pip3 install requests
-
 # Input data comes from: https://adventofcode.com/2019/day/2/input
 """
 
@@ -31,7 +28,6 @@ def execute(instructions):
             skip = 3
         # Halt
         elif v == 99:
-            print("Halt instruction {} at index {}".format(v,i))
             return instructions
         # HCF
         else:
@@ -52,7 +48,6 @@ def find_19690720(restored_instructs):
             result = execute(tmp_instructs)
             if result:
                 if result[0] == 19690720:
-                    print("Found 19690720 with noun {}, verb {}".format(n,v))
                     return n,v
 
     return False, False
@@ -84,23 +79,23 @@ def main():
     orig_instructs = load_intructs_from_file()
     if not orig_instructs:
         return False
-    print("Original instruction set: {}".format(orig_instructs))
 
 
     # Pass a copy of orig_instructs[] so that it isn't modified in-place
     restored_instructs = restore_instructs(orig_instructs[:])
-    print("Restored instruction set: {}".format(restored_instructs))
 
 
     exec_instructs = execute(restored_instructs[:])
     if not exec_instructs:
         return False
-    print("Executed instruction set: {}".format(exec_instructs))
+    print("Executed instruction set: {}\n".format(exec_instructs))
 
 
     noun, verb = find_19690720(restored_instructs[:])
     if not noun:
         return False
+    else:
+        print("Found 19690720 with noun {}, verb {}".format(noun,verb))
 
     return True
 

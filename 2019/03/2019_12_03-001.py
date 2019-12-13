@@ -1,7 +1,7 @@
 #!/usr/local/bin/python3
 
 """
-# Input data: 307237-769058
+# Input data comes from: https://adventofcode.com/2019/day/3/input
 """
 
 

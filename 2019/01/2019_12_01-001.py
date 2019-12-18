@@ -11,7 +11,7 @@ import sys
 def get_data_from_file():
 
     try:
-        with open('input') as f:
+        with open("input") as f:
             # No need for: int(l.strip("\n"))
             # int() will implicitly remove the new line
             lines = [int(l) for l in f.readlines()]
@@ -28,11 +28,11 @@ def fuel_for_all(input_data):
 
     for mass in input_data:
         # int() implicitly rounds down
-        mass_fuel = int(mass/3)-2
+        mass_fuel = int(mass / 3) - 2
         total_fuel += mass_fuel
 
-        while (mass_fuel > 0):
-            mass_fuel_overhead = int(mass_fuel/3)-2
+        while mass_fuel > 0:
+            mass_fuel_overhead = int(mass_fuel / 3) - 2
             if mass_fuel_overhead > 0:
                 total_fuel += mass_fuel_overhead
             mass_fuel = mass_fuel_overhead
@@ -41,8 +41,8 @@ def fuel_for_all(input_data):
 
 
 def fuel_for_mass(input_data):
-    
-    total_mass_fuel = sum([int(mass/3)-2 for mass in input_data])
+
+    total_mass_fuel = sum([int(mass / 3) - 2 for mass in input_data])
 
     return total_mass_fuel
 
@@ -51,14 +51,12 @@ def main():
 
     input_data = get_data_from_file()
     if not input_data:
-        return False
+        return 1
 
-    mass_fuel_req = fuel_for_mass(input_data)
-    print(mass_fuel_req)
-    all_fuel_req = fuel_for_all(input_data)
-    print(all_fuel_req)
+    print("Part 1: {}".format(fuel_for_mass(input_data)))
+    print("Part 2: {}".format(fuel_for_all(input_data)))
 
-    return True
+    return 0
 
 
 if __name__ == "__main__":

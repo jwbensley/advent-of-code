@@ -10,17 +10,13 @@ with open("input", "r") as f:
     part_2 = []
 
     for line in f:
-        mass = int(line.rstrip())
-        # int() implicitly rounds down
-        fuel = int(mass / 3) - 2
+        fuel = int(line.rstrip()) // 3 - 2
         part_1.append(fuel)
 
-        while fuel > 0:
-            fuel_overhead = int(fuel / 3) - 2
-            if fuel_overhead > 0:
-                part_2.append(fuel_overhead)
-            fuel = fuel_overhead
-
+        fuel_overhead = (fuel // 3) - 2
+        while fuel_overhead > 0:
+            part_2.append(fuel_overhead)
+            fuel_overhead = (fuel_overhead // 3) - 2
 
 print("Part 1: {}".format(sum(part_1)))
 print("Part 2: {}".format(sum(part_1) + sum(part_2)))

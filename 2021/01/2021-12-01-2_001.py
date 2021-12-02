@@ -1,7 +1,7 @@
 """
 Lines of code: medium
 Readability: medium
-Efficieny: medium
+Efficiency: medium
 
 It's only five lines of code, it's readable, and the effort is only 2n,
 which is "OK".

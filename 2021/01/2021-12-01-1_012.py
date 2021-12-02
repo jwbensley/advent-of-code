@@ -1,7 +1,7 @@
 """
 Lines of code: low
 Readability: low
-Efficieny: low
+Efficiency: low
 
 It's only one line of code, although squashing a loop into list comprehension
 is reducing "lines of code" for the worst possible readability. And this is

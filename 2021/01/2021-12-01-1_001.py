@@ -1,7 +1,7 @@
 """
-Lines of code: medium
+Lines of code: low
 Readability: high
-Efficieny: medium
+Efficiency: medium
 
 It's only five lines of code, perfectly readable, and we only walk the
 measurements list twice.

@@ -3,7 +3,7 @@ Lines of code: medium
 Readability: medium
 Efficiency: high
 
-9 lines of code, quite readable, walks the data set only once.
+10 lines of code, quite readable, walks the data set only once.
 """
 
 aim, horiz, depth = 0, 0, 0

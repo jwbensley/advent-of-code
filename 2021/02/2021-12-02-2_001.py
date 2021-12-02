@@ -4,7 +4,7 @@ Readability: high
 Efficiency: medium
 
 Initial naive version.
-10 lines of code, readable, walks the data set twice though.
+11 lines of code, readable, walks the data set twice though.
 """
 
 cmds = [(line.split()) for line in open("input")]

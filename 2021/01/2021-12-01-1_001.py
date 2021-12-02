@@ -1,3 +1,12 @@
+"""
+Lines of code: medium
+Readability: high
+Efficieny: medium
+
+It's only six lines of code, perfectly readable, and we only walk the
+measurements list twice.
+"""
+
 with open("input") as f:
     measurements = [int(line) for line in f]
 

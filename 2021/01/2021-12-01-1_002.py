@@ -1,14 +1,11 @@
 """
-Lines of code: low
+Lines of code: medium
 Readability: medium
-Efficieny: low
+Efficieny: medium
 
-It's only five lines of code, but readability isn't great and this is very
-inificient because walk the input file 2n+1 times.
+It's only two lines of code, not super unreadable but not great, and we only
+walk the measurements list twice.
 """
 
-count = 0
-for i, val in enumerate(open("input")):
-    if int(list(open("input"))[i].strip()) > int(list(open("input"))[i-1].strip()):
-        count+= 1
-print(count)
+measurements = [int(line.strip()) for line in open("input")]
+print(sum([1 for i in range(1, len(measurements)) if int(measurements[i] > measurements[i-1])]))

@@ -4,7 +4,7 @@ Readability: medium
 Efficiency: low
 
 It's only five lines of code, but readability isn't great and this is very
-inificient because walk the input file 2n+1 times.
+inefficient because walk the input file 2n+1 times.
 """
 
 count = 0

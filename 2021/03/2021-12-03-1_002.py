@@ -27,9 +27,8 @@ for line in open("input"):
     no_of_ones[10] += int(line[1])
     no_of_ones[11] += int(line[0])
 
-gamma, epsilon = 0, 0
+gamma = 0
 for i in range(len(no_of_ones) - 1, -1, -1):
     gamma |= int(not bool((lines / 2) // no_of_ones[i])) << i
-    #epsilon |= int(bool((lines / 2) // no_of_ones[i])) << i
 
 print(gamma * (~gamma & 0xFFF))

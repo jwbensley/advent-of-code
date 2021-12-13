@@ -1,0 +1,33 @@
+"""
+Lines of code: low
+Readability: medium
+Efficiency: medium
+
+Only 19 lines of code.
+Readability is OK.
+The entire input file is read onece, then the data set is walked again,
+int() is called n*12 times.
+"""
+
+no_of_ones = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+lines = [line.strip() for line in open("input")]
+for line in lines:
+
+    no_of_ones[0] += int(line[11])
+    no_of_ones[1] += int(line[10])
+    no_of_ones[2] += int(line[9])
+    no_of_ones[3] += int(line[8])
+    no_of_ones[4] += int(line[7])
+    no_of_ones[5] += int(line[6])
+    no_of_ones[6] += int(line[5])
+    no_of_ones[7] += int(line[4])
+    no_of_ones[8] += int(line[3])
+    no_of_ones[9] += int(line[2])
+    no_of_ones[10] += int(line[1])
+    no_of_ones[11] += int(line[0])
+
+gamma = 0
+for i in range(len(no_of_ones) - 1, -1, -1):
+    gamma |= int(not bool((len(lines) / 2) // no_of_ones[i])) << i
+
+print(gamma * (~gamma & 0xFFF))

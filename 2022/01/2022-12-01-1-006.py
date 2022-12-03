@@ -1,0 +1,1 @@
+print(sorted([sum(list(map(int, elv.strip().split("\n")))) for elv in open("input", "r").read().split("\n\n")])[-1])

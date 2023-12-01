@@ -1,0 +1,1 @@
+import re; print(sum(map(int,[f'{re.findall("[0-9]", l)[0]}{re.findall("[0-9]", l)[-1]}'for l in open("input")])))
